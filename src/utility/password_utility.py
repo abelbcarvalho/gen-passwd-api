@@ -3,7 +3,7 @@ from typing import Generator, Any
 from src.model.password import Password
 
 
-def get_not_none_keys(password: Password) -> Generator[str, Any, None]:
+async def get_not_none_keys(password: Password) -> Generator[str, Any, None]:
     not_none_keys: dict = {
         "numbers": password.numbers,
         "low_case": password.low_case,

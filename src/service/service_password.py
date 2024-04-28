@@ -10,8 +10,8 @@ class ServicePassword:
     def __init__(self):
         self._generate = Generate()
 
-    def generate_password(self, password: Password) -> str | None:
+    async def generate_password(self, password: Password) -> str | None:
         if not PasswordChecker.check_password(password=password):
             raise PasswordCheckerException("error: generate length or generate params whole false")
 
-        return self._generate.generate_password(password=password)
+        return await self._generate.generate_password(password=password)

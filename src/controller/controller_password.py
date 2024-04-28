@@ -8,5 +8,5 @@ class ControllerPassword:
     def __init__(self):
         self._service = ServicePassword()
 
-    def generate_password(self, password: Password) -> str | None:
-        return self._service.generate_password(password=password)
+    async def generate_password(self, password: Password) -> str | None:
+        return await self._service.generate_password(password=password)

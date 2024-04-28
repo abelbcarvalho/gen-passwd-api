@@ -18,7 +18,7 @@ class Generate:
         self._special_char_1 = tuple(v for v in "!#$%&()*+,-./:;=?@[]{|}")
         self._special_char_2 = tuple(v for v in "<>^~¢£§¬")
 
-    def generate_password(self, password: Password) -> str | None:
+    async def generate_password(self, password: Password) -> str | None:
         data_to_select: dict = {
             "numbers": self._numbers,
             "low_case": self._low_case,
@@ -27,7 +27,9 @@ class Generate:
             "special_char_2": self._special_char_2,
         }
 
-        valid_keys: tuple = tuple(v for v in get_not_none_keys(password))
+        not_none_keys = await get_not_none_keys(password=password)
+
+        valid_keys: tuple = tuple(v for v in not_none_keys)
 
         new_password: str = ""
 
