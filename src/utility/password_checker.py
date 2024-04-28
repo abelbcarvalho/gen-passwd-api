@@ -3,7 +3,7 @@ from src.model.password import Password
 
 class PasswordChecker:
     @classmethod
-    def check_password(cls, password: Password) -> bool:
+    async def check_password(cls, password: Password) -> bool:
         if password.length == 0:
             return False
 
