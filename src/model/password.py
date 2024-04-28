@@ -1,4 +1,7 @@
-class Password:
+from pydantic import BaseModel
+
+
+class Password(BaseModel):
     numbers: bool = None
     low_case: bool = None
     up_case: bool = None
