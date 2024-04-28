@@ -50,7 +50,7 @@ Please review the last Chapter *Dependencies* and install them all. If it ran su
 
 To make it, just run the file: [`app.py`](/app.py). It is configured.
 
-On the root directory [here](/) of that project, just type:
+On the root directory [here]() of that project, just type:
 
 For Windows:
 
