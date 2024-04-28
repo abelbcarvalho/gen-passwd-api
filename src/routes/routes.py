@@ -10,5 +10,5 @@ controller = ControllerPassword()
 
 
 @passwd_generator_api.post("/api/generate/password")
-async def generate_password(password: Password) -> Response | None:
+async def generate_password(password: Password) -> Response:
     return await controller.generate_password(password=password)
