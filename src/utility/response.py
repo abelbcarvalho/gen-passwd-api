@@ -1,3 +1,5 @@
+from json import dumps as to_json
+
 from typing import Any
 
 from fastapi import Response, HTTPException
@@ -13,15 +15,15 @@ async def success_response(
         content = {key: value}
 
     return Response(
-        content=content,
+        content=to_json(content),
         status_code=status_code
     )
 
 
 async def error_response(key: str, value: str, status_code: int) -> None:
-    detail = {key: value}
+    details = {key: value}
 
     raise HTTPException(
-        detail=detail,
+        detail=to_json(details),
         status_code=status_code,
     )
