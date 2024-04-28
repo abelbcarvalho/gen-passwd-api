@@ -21,9 +21,9 @@ async def success_response(
 
 
 async def error_response(key: str, value: str, status_code: int) -> None:
-    details = {key: value}
+    detail = {key: value}
 
     raise HTTPException(
-        detail=to_json(details),
+        detail=detail,
         status_code=status_code,
     )
