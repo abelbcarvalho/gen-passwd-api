@@ -1,0 +1,2 @@
+[tool.poetry.scripts]
+start = "src.app.app:handle_api"

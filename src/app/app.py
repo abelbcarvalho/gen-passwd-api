@@ -11,5 +11,5 @@ app.include_router(passwd_generator_api)
 
 
 # run api
-async def handle_api() -> None:
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+def handle_api() -> None:
+    uvicorn.run("src.app.app:app", host="localhost", port=8000, reload=True)
