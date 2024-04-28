@@ -1,6 +1,6 @@
 from typing import Any
 
-from fastapi import Response
+from fastapi import Response, HTTPException
 
 
 async def success_response(
@@ -15,4 +15,13 @@ async def success_response(
     return Response(
         content=content,
         status_code=status_code
+    )
+
+
+async def error_response(key: str, value: str, status_code: int) -> None:
+    detail = {key: value}
+
+    raise HTTPException(
+        detail=detail,
+        status_code=status_code,
     )
