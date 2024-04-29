@@ -41,6 +41,7 @@ The generated password can contain:
 10. Pytest Torn Async;
 11. Pytest Trio;
 12. Pytest Twisted;
+13. Python DotEnv
 
 > **NOTE:** The project dependencies list can be found on the file [requirements.txt](requirements.txt)
 
