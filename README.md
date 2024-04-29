@@ -5,13 +5,13 @@ API for generate a strong password.
 1. [Description](#description)
 2. [Valid Characters](#valid-characters)
 3. [Dependencies](#dependencies)
-4. [Unit Tests](#unit-tests)
-5. [How To Run?](#how-to-run)
-6. [API Routes](#api-routes)
-7. [Model Structure](#model-structure)
-8. [How It Works?](#how-it-works)
-9. [System Steps](#system-steps)
-10. [Possible Questions](#possible-questions)
+4. [Project's Structure](#projects-structure)
+5. [Unit Tests](#unit-tests)
+6. [How To Run?](#how-to-run)
+7. [API Routes](#api-routes)
+8. [Model Structure](#model-structure)
+9. [How It Works?](#how-it-works)
+10. [System Steps](#system-steps)
 11. [The End](#the-end)
 
 ### Description
@@ -52,6 +52,23 @@ To install the `requirements.txt` file, just type or paste it on a Terminal wind
 
 ```commandline
 pip install -r requirements.txt
+```
+
+### Project's Structure
+Loot at an basic explanation of each *package* in *src*.
+
+```command
+src/             -> where source files are in.
+|----app/        -> where is the fastapi app.
+|----controller/ -> controller and attach to service.
+|----exceptions/ -> exceptions generic are here.
+|----generate/   -> where in fact the password is generated.
+|----model/      -> model to communcate to the back-end.
+|----routes/     -> where are the routes of this API.
+|----service/    -> services attach to generate from controller.
+|----utility/    -> utilities to check and format data.
+tests/           -> unit tests are here.
+main.py          -> file to run that project
 ```
 
 ### Unit Tests
@@ -191,17 +208,6 @@ A resume of [*how it works?*](#how-it-works)
 4. Transfer to *clipboard* area;
 5. Return the generated password;
 6. Let it be seen by user;
-
-### Possible Questions
-
-<details>
-    <summary>
-        Question?
-    </summary>
-    <p>
-        Answer.
-    </p>
-</details>
 
 ### The End
 It's a simple project task to make a useful software.
