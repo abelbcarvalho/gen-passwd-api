@@ -1,6 +1,8 @@
-from fastapi.testclient import TestClient
+import pytest
 
-from tests.conftest import client
+from os import environ
+
+from httpx import AsyncClient
 
 from tests.mocks.passwords import (
     password_one,
@@ -9,11 +11,8 @@ from tests.mocks.passwords import (
     password_four,
 )
 
+from src.app.app import app
+
 
 URL = "/api/generate/password"
-
-
-async def test_generate_password_success_one(client: TestClient) -> None:
-    response = client.post(URL, data=password_one)
-
-    assert response.status_code == 201
+API_URL_BASE = environ["API_URL_BASE_TEST"]
