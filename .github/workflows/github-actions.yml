@@ -7,9 +7,10 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
-      - env:
-          API_URL_BASE_TEST: ${{ secrets.API_URL_BASE_TEST }}
       - uses: actions/checkout@v4
+      - name: Check API URL Base Test
+        run:
+          echo "API_URL_BASE_TEST: ${{ secrets.API_URL_BASE_TEST }}"
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
