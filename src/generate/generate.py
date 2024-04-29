@@ -19,6 +19,18 @@ class Generate:
         self._special_char_2 = tuple(v for v in "<>^~¢£§¬")
 
     async def generate_password(self, password: Password) -> str | None:
+        not_none_keys = await get_not_none_keys(password=password)
+
+        valid_keys: tuple = tuple(v for v in not_none_keys)
+
+        new_password: str = len(valid_keys) > 0 and await self._join_str_password(
+            length=password.length,
+            valid_keys=valid_keys,
+        ) or ""
+
+        return new_password
+
+    async def _join_str_password(self, length: int, valid_keys: tuple[str]) -> str:
         data_to_select: dict = {
             "numbers": self._numbers,
             "low_case": self._low_case,
@@ -27,17 +39,13 @@ class Generate:
             "special_char_2": self._special_char_2,
         }
 
-        not_none_keys = await get_not_none_keys(password=password)
+        passwd = ""
 
-        valid_keys: tuple = tuple(v for v in not_none_keys)
-
-        new_password: str = ""
-
-        for _ in range(password.length):
+        for _ in range(length):
             chosen_key: str = choice(valid_keys)
 
             chosen_value: str = choice(data_to_select.get(chosen_key))
 
-            new_password += chosen_value
+            passwd += chosen_value
 
-        return new_password
+        return passwd
