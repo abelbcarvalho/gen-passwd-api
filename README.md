@@ -34,6 +34,7 @@ The generated password can contain:
 3. Pytest
 4. FastAPI;
 5. Uvicorn;
+6. Httpx;
 
 > **NOTE:** The project dependencies list can be found on the file [requirements.txt](requirements.txt)
 
