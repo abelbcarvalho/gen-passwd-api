@@ -14,24 +14,36 @@ from src.controller.controller_password import ControllerPassword
 
 @pytest.mark.asyncio(scope="class")
 class TestControllerSuccessLayer:
-    _pass_one: Password = Password.parse_obj(password_one)
-    _pass_two: Password = Password.parse_obj(password_two)
-    _pass_three: Password = Password.parse_obj(password_three)
-    _pass_four: Password = Password.parse_obj(password_four)
-    _controller_password: ControllerPassword = ControllerPassword()
+    controller_password: ControllerPassword = ControllerPassword()
 
     @pytest.mark.asyncio
     async def test_controller_password_success_one(self) -> None:
-        pass
+        pass_one: Password = Password.parse_obj(password_one)
+
+        result = await self.controller_password.generate_password(pass_one)
+
+        assert result.status_code == 201
 
     @pytest.mark.asyncio
     async def test_controller_password_success_two(self) -> None:
-        pass
+        pass_two: Password = Password.parse_obj(password_two)
+
+        result = await self.controller_password.generate_password(pass_two)
+
+        assert result.status_code == 201
 
     @pytest.mark.asyncio
     async def test_controller_password_success_three(self) -> None:
-        pass
+        pass_three: Password = Password.parse_obj(password_three)
+
+        result = await self.controller_password.generate_password(pass_three)
+
+        assert result.status_code == 201
 
     @pytest.mark.asyncio
     async def test_controller_password_success_four(self) -> None:
-        pass
+        pass_four: Password = Password.parse_obj(password_four)
+
+        result = await self.controller_password.generate_password(pass_four)
+
+        assert result.status_code == 201
