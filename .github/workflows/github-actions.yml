@@ -2,6 +2,9 @@ name: GitHub Actions PyTest
 run-name: ${{ github.actor }} is testing out Unit Tests 🚀
 on: [push]
 
+.env:
+  API_URL_BASE_TEST: ${{ secrets.API_URL_BASE_TEST }}
+
 jobs:
   build:
 
