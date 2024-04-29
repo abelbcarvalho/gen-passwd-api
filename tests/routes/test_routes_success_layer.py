@@ -18,45 +18,44 @@ URL = "/api/generate/password"
 API_URL_BASE = environ["API_URL_BASE_TEST"]
 
 
-@pytest.mark.asyncio
-async def test_generate_password_success_one() -> None:
-    async with AsyncClient(app=app, base_url=API_URL_BASE) as client:
-        response = await client.post(
-            url=URL,
-            json=password_one
-        )
+@pytest.mark.asyncio(scope="class")
+class TestRoutesSuccessLayer:
+    @pytest.mark.asyncio
+    async def test_generate_password_success_one(self) -> None:
+        async with AsyncClient(app=app, base_url=API_URL_BASE) as client:
+            response = await client.post(
+                url=URL,
+                json=password_one
+            )
 
-        assert response.status_code == 201
+            assert response.status_code == 201
 
+    @pytest.mark.asyncio
+    async def test_generate_password_success_two(self) -> None:
+        async with AsyncClient(app=app, base_url=API_URL_BASE) as client:
+            response = await client.post(
+                url=URL,
+                json=password_two
+            )
 
-@pytest.mark.asyncio
-async def test_generate_password_success_two() -> None:
-    async with AsyncClient(app=app, base_url=API_URL_BASE) as client:
-        response = await client.post(
-            url=URL,
-            json=password_two
-        )
+            assert response.status_code == 201
 
-        assert response.status_code == 201
+    @pytest.mark.asyncio
+    async def test_generate_password_success_three(self) -> None:
+        async with AsyncClient(app=app, base_url=API_URL_BASE) as client:
+            response = await client.post(
+                url=URL,
+                json=password_three
+            )
 
+            assert response.status_code == 201
 
-@pytest.mark.asyncio
-async def test_generate_password_success_three() -> None:
-    async with AsyncClient(app=app, base_url=API_URL_BASE) as client:
-        response = await client.post(
-            url=URL,
-            json=password_three
-        )
+    @pytest.mark.asyncio
+    async def test_generate_password_success_four(self) -> None:
+        async with AsyncClient(app=app, base_url=API_URL_BASE) as client:
+            response = await client.post(
+                url=URL,
+                json=password_four
+            )
 
-        assert response.status_code == 201
-
-
-@pytest.mark.asyncio
-async def test_generate_password_success_four() -> None:
-    async with AsyncClient(app=app, base_url=API_URL_BASE) as client:
-        response = await client.post(
-            url=URL,
-            json=password_four
-        )
-
-        assert response.status_code == 201
+            assert response.status_code == 201
