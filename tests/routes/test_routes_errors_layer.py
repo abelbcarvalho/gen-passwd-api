@@ -5,6 +5,7 @@ from os import environ
 from httpx import AsyncClient
 
 from tests.mocks.passwords import (
+    password_one,
     password_error_one,
     password_error_two,
     password_error_three,
@@ -22,16 +23,54 @@ API_URL_BASE = environ["API_URL_BASE_TEST"]
 class TestRoutesErrorsLayer:
     @pytest.mark.asyncio
     async def test_routes_errors_layer_one(self) -> None:
-        pass
+        async with AsyncClient(app=app, base_url=API_URL_BASE) as client:
+            response = await client.post(
+                url=URL,
+                json=password_error_one
+            )
+
+            assert response.status_code == 400
 
     @pytest.mark.asyncio
     async def test_routes_errors_layer_two(self) -> None:
-        pass
+        async with AsyncClient(app=app, base_url=API_URL_BASE) as client:
+            response = await client.post(
+                url=URL,
+                json=password_error_two
+            )
+
+            assert response.status_code == 400
 
     @pytest.mark.asyncio
     async def test_routes_errors_layer_three(self) -> None:
-        pass
+        async with AsyncClient(app=app, base_url=API_URL_BASE) as client:
+            response = await client.post(
+                url=URL,
+                json=password_error_three
+            )
+
+            assert response.status_code == 400
 
     @pytest.mark.asyncio
     async def test_routes_errors_layer_four(self) -> None:
-        pass
+        password_error = password_one
+
+        password_error["length"] = 0
+
+        async with AsyncClient(app=app, base_url=API_URL_BASE) as client:
+            response = await client.post(
+                url=URL,
+                json=password_error
+            )
+
+            assert response.status_code == 400
+
+    @pytest.mark.asyncio
+    async def test_routes_errors_layer_five(self) -> None:
+        async with AsyncClient(app=app, base_url=API_URL_BASE) as client:
+            response = await client.post(
+                url=URL,
+                json=password_error_four
+            )
+
+            assert response.status_code == 400
