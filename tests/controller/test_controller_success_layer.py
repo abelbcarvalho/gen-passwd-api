@@ -22,11 +22,15 @@ class TestControllerSuccessLayer:
 
         result = await self.controller_password.generate_password(pass_one)
 
+        assert result.status_code == 201
+
     @pytest.mark.asyncio
     async def test_controller_password_success_two(self) -> None:
         pass_two: Password = Password.parse_obj(password_two)
 
         result = await self.controller_password.generate_password(pass_two)
+
+        assert result.status_code == 201
 
     @pytest.mark.asyncio
     async def test_controller_password_success_three(self) -> None:
@@ -34,8 +38,12 @@ class TestControllerSuccessLayer:
 
         result = await self.controller_password.generate_password(pass_three)
 
+        assert result.status_code == 201
+
     @pytest.mark.asyncio
     async def test_controller_password_success_four(self) -> None:
         pass_four: Password = Password.parse_obj(password_four)
 
         result = await self.controller_password.generate_password(pass_four)
+
+        assert result.status_code == 201
