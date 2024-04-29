@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} is testing out Unit Tests 🚀
 on: [push]
 
 .env:
-  API_URL_BASE_TEST: ${{ secrets.API_URL_BASE_TEST }}
+  API_URL_BASE_TEST: ${{ secrets.API_URL_BASE_sTEST }}
 
 jobs:
   build:
