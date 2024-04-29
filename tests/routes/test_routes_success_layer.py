@@ -27,3 +27,14 @@ async def test_generate_password_success_one() -> None:
         )
 
         assert response.status_code == 201
+
+
+@pytest.mark.asyncio
+async def test_generate_password_success_two() -> None:
+    async with AsyncClient(app=app, base_url=API_URL_BASE) as client:
+        response = await client.post(
+            url=URL,
+            json=password_two
+        )
+
+        assert response.status_code == 201
