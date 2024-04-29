@@ -43,6 +43,7 @@ The generated password can contain:
 11. [Pytest Trio](https://github.com/python-trio/pytest-trio);
 12. [Pytest Twisted](https://github.com/pytest-dev/pytest-twisted);
 13. [Python DotEnv](https://github.com/theskumar/python-dotenv);
+14. [PyLint](https://pypi.org/project/pylint/);
 
 > **NOTE:** The project dependencies list can be found on the file [requirements.txt](requirements.txt)
 
@@ -213,5 +214,7 @@ A resume of [*how it works?*](#how-it-works)
 It's a simple project task to make a useful software.
 
 -- *Abel Carvalho*
+
+- [Github Directory's README.md](.github/README.md)
 
 *That's all folks!!!*
