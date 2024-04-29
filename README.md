@@ -5,13 +5,14 @@ API for generate a strong password.
 1. [Description](#description)
 2. [Valid Characters](#valid-characters)
 3. [Dependencies](#dependencies)
-4. [How To Run?](#how-to-run)
-5. [API Routes](#api-routes)
-6. [Model Structure](#model-structure)
-7. [How It Works?](#how-it-works)
-8. [System Steps](#system-steps)
-9. [Possible Questions](#possible-questions)
-10. [The End](#the-end)
+4. [Unit Tests](#unit-tests)
+5. [How To Run?](#how-to-run)
+6. [API Routes](#api-routes)
+7. [Model Structure](#model-structure)
+8. [How It Works?](#how-it-works)
+9. [System Steps](#system-steps)
+10. [Possible Questions](#possible-questions)
+11. [The End](#the-end)
 
 ### Description
 *This API has the intent of generate strong passwords to you set into the register of web services. You just need to set
@@ -52,6 +53,49 @@ To install the `requirements.txt` file, just type or paste it on a Terminal wind
 ```commandline
 pip install -r requirements.txt
 ```
+
+### Unit Tests
+This project has the unitary tests configured. We used `pytest` as *unit test provider*. Please check if you installed
+the **dependencies** [here](#dependencies) before you consider to run these commands here.
+
+First, I present the directory [tests](/tests), inside it you can find the following structure:
+
+```command
+tests/
+|----controller/
+|----|----test_controller_errors_layer.py
+|----|----test_controller_success_layer.py
+|----generate/
+|----|----test_generate_errors_layer.py
+|----|----test_generate_success_layer.py
+|----mocks/
+|----|----passwords.py
+|----routes/
+|----|----test_routes_errors_layer.py
+|----|----test_routes_success_layer.py
+|----service/
+|----|----generate_password_service.py
+|----|----test_service_errors_layer.py
+|----|----test_service_success_layer.py
+|----conftest.py
+```
+
+As you can see, this is the package `tests/`, and for each tests module, we have a class.
+
+To run these tests you have two options:
+
+1. Run by IDE resource;
+2. Run by a command on Terminal;
+
+To Run by command line, paste this on Terminal:
+
+```commandline
+pytest
+```
+
+IDE Case:
+
+> **NOTE:** At this point I won't talk about IDE, please search for the IDE you use and how to run this by it.
 
 ### How To Run?
 Please review the last Chapter *Dependencies* and install them all. If it ran successfully, you are ready to run.
