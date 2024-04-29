@@ -15,3 +15,19 @@ from tests.mocks.passwords import (
 @pytest.mark.asyncio(scope="class")
 class TestGenerateErrorsLayer:
     generate: Generate = Generate()
+
+    @pytest.mark.asyncio
+    async def test_generate_password_error_one(self) -> None:
+        pass
+
+    @pytest.mark.asyncio
+    async def test_generate_password_error_two(self) -> None:
+        pass
+
+    @pytest.mark.asyncio
+    async def test_generate_password_error_three(self) -> None:
+        pass
+
+    @pytest.mark.asyncio
+    async def test_generate_password_error_four(self) -> None:
+        pass
