@@ -18,16 +18,32 @@ class TestGenerateErrorsLayer:
 
     @pytest.mark.asyncio
     async def test_generate_password_error_one(self) -> None:
-        pass
+        pass_error_one = Password.parse_obj(password_error_one)
+
+        new_password = await self.generate.generate_password(pass_error_one)
+
+        assert len(new_password) == 0
 
     @pytest.mark.asyncio
     async def test_generate_password_error_two(self) -> None:
-        pass
+        pass_error_two = Password.parse_obj(password_error_two)
+
+        new_password = await self.generate.generate_password(pass_error_two)
+
+        assert len(new_password) == 0
 
     @pytest.mark.asyncio
     async def test_generate_password_error_three(self) -> None:
-        pass
+        pass_error_three = Password.parse_obj(password_error_three)
+
+        new_password = await self.generate.generate_password(pass_error_three)
+
+        assert len(new_password) == 0
 
     @pytest.mark.asyncio
     async def test_generate_password_error_four(self) -> None:
-        pass
+        pass_error_four = Password.parse_obj(password_error_four)
+
+        new_password = await self.generate.generate_password(pass_error_four)
+
+        assert len(new_password) == 0
