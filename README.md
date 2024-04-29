@@ -36,10 +36,11 @@ The generated password can contain:
 5. Uvicorn;
 6. Httpx;
 7. Anyio;
-8. Pytest Asyncio;
-9. Pytest Torn Async;
-10. Pytest Trio;
-11. Pytest Twisted;
+8. Twisted;
+9. Pytest Asyncio;
+10. Pytest Torn Async;
+11. Pytest Trio;
+12. Pytest Twisted;
 
 > **NOTE:** The project dependencies list can be found on the file [requirements.txt](requirements.txt)
 
