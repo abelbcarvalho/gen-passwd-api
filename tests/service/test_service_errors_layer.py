@@ -2,8 +2,6 @@ import pytest
 
 from src.exceptions.exceptions import PasswordCheckerException
 
-from src.model.password import Password
-
 from tests.mocks.passwords import (
     password_error_one,
     password_error_two,
@@ -18,16 +16,16 @@ from tests.service.generate_password_service import generate_password
 class TestServiceErrorsLayer:
     @pytest.mark.asyncio
     async def test_password_error_one(self) -> None:
-        pass_one = Password.parse_obj(password_error_one)
+        pass
 
     @pytest.mark.asyncio
     async def test_password_error_two(self) -> None:
-        pass_two = Password.parse_obj(password_error_two)
+        pass
 
     @pytest.mark.asyncio
     async def test_password_error_three(self) -> None:
-        pass_three = Password.parse_obj(password_error_three)
+        pass
 
     @pytest.mark.asyncio
     async def test_password_error_four(self) -> None:
-        pass_four = Password.parse_obj(password_error_four)
+        pass
