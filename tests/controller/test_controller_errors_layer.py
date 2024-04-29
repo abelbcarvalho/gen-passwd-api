@@ -1,5 +1,7 @@
 import pytest
 
+from fastapi import HTTPException
+
 from tests.mocks.passwords import (
     password_error_one,
     password_error_two,
@@ -20,30 +22,34 @@ class TestControllerErrorsLayer:
     async def test_controller_password_error_one(self) -> None:
         pass_one: Password = Password.parse_obj(password_error_one)
 
-        result = await self.controller_password.generate_password(pass_one)
+        with pytest.raises(HTTPException):
+            result = await self.controller_password.generate_password(pass_one)
 
-        assert result.status_code == 400
+            assert result.status_code == 400
 
     @pytest.mark.asyncio
     async def test_controller_password_error_two(self) -> None:
         pass_two: Password = Password.parse_obj(password_error_two)
 
-        result = await self.controller_password.generate_password(pass_two)
+        with pytest.raises(HTTPException):
+            result = await self.controller_password.generate_password(pass_two)
 
-        assert result.status_code == 400
+            assert result.status_code == 400
 
     @pytest.mark.asyncio
     async def test_controller_password_error_three(self) -> None:
         pass_three: Password = Password.parse_obj(password_error_three)
 
-        result = await self.controller_password.generate_password(pass_three)
+        with pytest.raises(HTTPException):
+            result = await self.controller_password.generate_password(pass_three)
 
-        assert result.status_code == 400
+            assert result.status_code == 400
 
     @pytest.mark.asyncio
     async def test_controller_password_error_four(self) -> None:
         pass_four: Password = Password.parse_obj(password_error_four)
 
-        result = await self.controller_password.generate_password(pass_four)
+        with pytest.raises(HTTPException):
+            result = await self.controller_password.generate_password(pass_four)
 
-        assert result.status_code == 400
+            assert result.status_code == 400
