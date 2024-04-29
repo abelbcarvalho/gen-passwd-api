@@ -14,11 +14,11 @@ from src.controller.controller_password import ControllerPassword
 
 @pytest.mark.asyncio(scope="class")
 class TestControllerSuccessLayer:
-    _pass_one: Password = Password.parse_obj(password_one)
-    _pass_two: Password = Password.parse_obj(password_two)
-    _pass_three: Password = Password.parse_obj(password_three)
-    _pass_four: Password = Password.parse_obj(password_four)
-    _controller_password: ControllerPassword = ControllerPassword()
+    pass_one: Password = Password.parse_obj(password_one)
+    pass_two: Password = Password.parse_obj(password_two)
+    pass_three: Password = Password.parse_obj(password_three)
+    pass_four: Password = Password.parse_obj(password_four)
+    controller_password: ControllerPassword = ControllerPassword()
 
     @pytest.mark.asyncio
     async def test_controller_password_success_one(self) -> None:
