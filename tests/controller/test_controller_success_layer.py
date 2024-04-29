@@ -14,24 +14,28 @@ from src.controller.controller_password import ControllerPassword
 
 @pytest.mark.asyncio(scope="class")
 class TestControllerSuccessLayer:
-    pass_one: Password = Password.parse_obj(password_one)
-    pass_two: Password = Password.parse_obj(password_two)
-    pass_three: Password = Password.parse_obj(password_three)
-    pass_four: Password = Password.parse_obj(password_four)
     controller_password: ControllerPassword = ControllerPassword()
 
     @pytest.mark.asyncio
     async def test_controller_password_success_one(self) -> None:
-        pass
+        pass_one: Password = Password.parse_obj(password_one)
+
+        result = await self.controller_password.generate_password(pass_one)
 
     @pytest.mark.asyncio
     async def test_controller_password_success_two(self) -> None:
-        pass
+        pass_two: Password = Password.parse_obj(password_two)
+
+        result = await self.controller_password.generate_password(pass_two)
 
     @pytest.mark.asyncio
     async def test_controller_password_success_three(self) -> None:
-        pass
+        pass_three: Password = Password.parse_obj(password_three)
+
+        result = await self.controller_password.generate_password(pass_three)
 
     @pytest.mark.asyncio
     async def test_controller_password_success_four(self) -> None:
-        pass
+        pass_four: Password = Password.parse_obj(password_four)
+
+        result = await self.controller_password.generate_password(pass_four)
