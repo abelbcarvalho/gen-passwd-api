@@ -3,9 +3,8 @@ run-name: ${{ github.actor }} is testing out Unit Tests 🚀
 on: [push]
 
 jobs:
-  needs:
-    secrets
   build:
+    needs: secrets
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
