@@ -29,19 +29,19 @@ The generated password can contain:
 5. Special Characters 2 `<>^~¢£§¬`;
 
 ### Dependencies
-1. [Python3]();
-2. [Pip]();
-3. [Pytest]();
-4. [FastAPI]();
-5. [Uvicorn]();
-6. [Httpx]();
-7. [Anyio]();
-8. [Twisted]();
-9. [Pytest Asyncio]();
-10. [Pytest Torn Async]();
-11. [Pytest Trio]();
-12. [Pytest Twisted]();
-13. [Python DotEnv]();
+1. [Python3](https://www.python.org/);
+2. [Pip](https://pip.pypa.io/en/stable/installation/);
+3. [Pytest](https://docs.pytest.org/);
+4. [FastAPI](https://fastapi.tiangolo.com/);
+5. [Uvicorn](https://www.uvicorn.org/);
+6. [Httpx](https://www.python-httpx.org/);
+7. [Anyio](https://anyio.readthedocs.io/);
+8. [Twisted](https://twisted.org/);
+9. [Pytest Asyncio](https://pytest-asyncio.readthedocs.io/);
+10. [Pytest Torn Async](https://github.com/eukaryote/pytest-tornasync);
+11. [Pytest Trio](https://github.com/python-trio/pytest-trio);
+12. [Pytest Twisted](https://github.com/pytest-dev/pytest-twisted);
+13. [Python DotEnv](https://github.com/theskumar/python-dotenv);
 
 > **NOTE:** The project dependencies list can be found on the file [requirements.txt](requirements.txt)
 
