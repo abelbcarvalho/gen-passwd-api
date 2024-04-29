@@ -21,6 +21,8 @@ API_URL_BASE = environ["API_URL_BASE_TEST"]
 
 @pytest.mark.asyncio(scope="class")
 class TestRoutesErrorsLayer:
+    _expert_content: str = b'{"detail":{"error":"generate length or generate params whole false"}}'
+
     @pytest.mark.asyncio
     async def test_routes_errors_layer_one(self) -> None:
         async with AsyncClient(app=app, base_url=API_URL_BASE) as client:
@@ -30,6 +32,7 @@ class TestRoutesErrorsLayer:
             )
 
             assert response.status_code == 400
+            assert response.content == self._expert_content
 
     @pytest.mark.asyncio
     async def test_routes_errors_layer_two(self) -> None:
@@ -40,6 +43,7 @@ class TestRoutesErrorsLayer:
             )
 
             assert response.status_code == 400
+            assert response.content == self._expert_content
 
     @pytest.mark.asyncio
     async def test_routes_errors_layer_three(self) -> None:
@@ -50,6 +54,7 @@ class TestRoutesErrorsLayer:
             )
 
             assert response.status_code == 400
+            assert response.content == self._expert_content
 
     @pytest.mark.asyncio
     async def test_routes_errors_layer_four(self) -> None:
@@ -64,6 +69,7 @@ class TestRoutesErrorsLayer:
             )
 
             assert response.status_code == 400
+            assert response.content == self._expert_content
 
     @pytest.mark.asyncio
     async def test_routes_errors_layer_five(self) -> None:
@@ -74,3 +80,4 @@ class TestRoutesErrorsLayer:
             )
 
             assert response.status_code == 400
+            assert response.content == self._expert_content
