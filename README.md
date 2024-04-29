@@ -29,19 +29,19 @@ The generated password can contain:
 5. Special Characters 2 `<>^~¢£§¬`;
 
 ### Dependencies
-1. Python3;
-2. Pip;
-3. Pytest
-4. FastAPI;
-5. Uvicorn;
-6. Httpx;
-7. Anyio;
-8. Twisted;
-9. Pytest Asyncio;
-10. Pytest Torn Async;
-11. Pytest Trio;
-12. Pytest Twisted;
-13. Python DotEnv
+1. [Python3]();
+2. [Pip]();
+3. [Pytest]();
+4. [FastAPI]();
+5. [Uvicorn]();
+6. [Httpx]();
+7. [Anyio]();
+8. [Twisted]();
+9. [Pytest Asyncio]();
+10. [Pytest Torn Async]();
+11. [Pytest Trio]();
+12. [Pytest Twisted]();
+13. [Python DotEnv]();
 
 > **NOTE:** The project dependencies list can be found on the file [requirements.txt](requirements.txt)
 
