@@ -14,6 +14,8 @@ from tests.service.generate_password_service import generate_password
 class TestServiceSuccessLayer:
     @pytest.mark.asyncio
     async def test_password_service_success_one(self) -> None:
+        password_one["length"] = 32
+
         new_password = await generate_password(password_one)
 
         assert new_password is not None
