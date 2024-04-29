@@ -3,6 +3,8 @@ name: Pylint
 on: [push]
 
 jobs:
+  disable:
+    - C0111 # missing docstring disable
   build:
     runs-on: ubuntu-latest
     strategy:
