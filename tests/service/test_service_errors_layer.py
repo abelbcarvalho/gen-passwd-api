@@ -16,16 +16,20 @@ from tests.service.generate_password_service import generate_password
 class TestServiceErrorsLayer:
     @pytest.mark.asyncio
     async def test_password_error_one(self) -> None:
-        pass
+        with pytest.raises(PasswordCheckerException):
+            await generate_password(password_error_one)
 
     @pytest.mark.asyncio
     async def test_password_error_two(self) -> None:
-        pass
+        with pytest.raises(PasswordCheckerException):
+            await generate_password(password_error_two)
 
     @pytest.mark.asyncio
     async def test_password_error_three(self) -> None:
-        pass
+        with pytest.raises(PasswordCheckerException):
+            await generate_password(password_error_three)
 
     @pytest.mark.asyncio
     async def test_password_error_four(self) -> None:
-        pass
+        with pytest.raises(PasswordCheckerException):
+            await generate_password(password_error_four)
