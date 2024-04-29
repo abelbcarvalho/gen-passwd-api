@@ -21,7 +21,9 @@ API_URL_BASE = environ["API_URL_BASE_TEST"]
 @pytest.mark.asyncio(scope="class")
 class TestRoutesSuccessLayer:
     @pytest.mark.asyncio
-    async def test_generate_password_success_one(self) -> None:
+    async def test_routes_generate_password_success_one(self) -> None:
+        password_one["length"] = 32
+
         async with AsyncClient(app=app, base_url=API_URL_BASE) as client:
             response = await client.post(
                 url=URL,
@@ -31,7 +33,7 @@ class TestRoutesSuccessLayer:
             assert response.status_code == 201
 
     @pytest.mark.asyncio
-    async def test_generate_password_success_two(self) -> None:
+    async def test_routes_generate_password_success_two(self) -> None:
         async with AsyncClient(app=app, base_url=API_URL_BASE) as client:
             response = await client.post(
                 url=URL,
@@ -41,7 +43,7 @@ class TestRoutesSuccessLayer:
             assert response.status_code == 201
 
     @pytest.mark.asyncio
-    async def test_generate_password_success_three(self) -> None:
+    async def test_routes_generate_password_success_three(self) -> None:
         async with AsyncClient(app=app, base_url=API_URL_BASE) as client:
             response = await client.post(
                 url=URL,
@@ -51,7 +53,7 @@ class TestRoutesSuccessLayer:
             assert response.status_code == 201
 
     @pytest.mark.asyncio
-    async def test_generate_password_success_four(self) -> None:
+    async def test_routes_generate_password_success_four(self) -> None:
         async with AsyncClient(app=app, base_url=API_URL_BASE) as client:
             response = await client.post(
                 url=URL,
