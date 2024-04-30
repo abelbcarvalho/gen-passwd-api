@@ -1,6 +1,7 @@
 name: GitHub Actions PyTest
 run-name: ${{ github.actor }} is testing out Unit Tests 🚀
 on: [push]
+permissions: read-all
 
 jobs:
   build:
@@ -8,13 +9,15 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-      - name: Check API URL Base Test
-        run:
-          echo "API_URL_BASE_TEST: ${{ secrets.API_URL_BASE_TEST }}"
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
+      - name: My Environment Secrets
+        env:
+          API_URL_BASE_TEST: ${{ secrets.API_URL_BASE_TEST }}
+        run: |
+          echo "Environment Variables Loaded"
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
