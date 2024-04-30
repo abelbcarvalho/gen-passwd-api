@@ -1,4 +1,4 @@
-from src.utility.password_checker import PasswordChecker
+from src.utility.password_checker import check_password
 
 from src.model.password import Password
 
@@ -12,7 +12,7 @@ async def generate_password(password: dict) -> str:
 
     generate: Generate = Generate()
 
-    if not await PasswordChecker.check_password(password=payload):
+    if not await check_password(password=payload):
         raise PasswordCheckerException("generate length or generate params whole false")
 
     new_password = await generate.generate_password(password=payload)

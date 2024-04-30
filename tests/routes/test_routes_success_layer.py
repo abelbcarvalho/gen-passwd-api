@@ -1,6 +1,6 @@
-import pytest
-
 from os import environ
+
+import pytest
 
 from httpx import AsyncClient
 

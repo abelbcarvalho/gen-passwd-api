@@ -1,4 +1,4 @@
-name: GitHub Actions PyTest
+name: GitHub Actions PyTest and PyLint
 run-name: ${{ github.actor }} is testing out PyLint and Unit Tests 🚀
 on: [push]
 permissions: read-all
@@ -26,7 +26,7 @@ jobs:
           pip install -r requirements.txt
       - name: Analysing the code with pylint
         run: |
-          pylint --disable=C0111 $(git ls-files '*.py')
+          pylint --disable=C0111,R0903 $(git ls-files '*.py')
       - name: Test with pytest
         run: |
           pip install pytest
