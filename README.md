@@ -118,7 +118,7 @@ IDE Case:
 ### How To Run?
 Please review the last Chapter *Dependencies* and install them all. If it ran successfully, you are ready to run.
 
-To make it, just run the file: [`main.py`](/main.py). It is configured.
+To make it, just run the file: [`main.py`](/server.py). It is configured.
 
 On the root directory [here]() of that project, just type:
 
