@@ -24,7 +24,7 @@ jobs:
           echo "Environment Variables Loaded"
       - name: Debug Secret
         run: |
-          echo "API_URL_BASE_TEST: $API_URL_BASE_TEST"
+          echo "API_URL_BASE_TEST: ${{ secrets.API_URL_BASE_TEST }}"
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
