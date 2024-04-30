@@ -6,6 +6,7 @@ permissions: read-all
 jobs:
   build:
     runs-on: ubuntu-22.04
+    environment: env
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python
@@ -14,7 +15,7 @@ jobs:
           python-version: '3.10'
       - name: My Environment Secrets
         env:
-          API_URL_BASE_TEST: ${{ secrets.API_URL_BASE_TEST }}
+          API_URL_BASE_TEST: ${{ vars.API_URL_BASE_TEST }}
         run: |
           echo "Environment Variables Loaded"
       - name: Install dependencies
