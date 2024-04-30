@@ -69,7 +69,7 @@ src/             -> where source files are in.
 |----service/    -> services attach to generate from controller.
 |----utility/    -> utilities to check and format data.
 tests/           -> unit tests are here.
-main.py          -> file to run that project
+server.py          -> file to run that project
 ```
 
 ### Unit Tests
@@ -118,7 +118,7 @@ IDE Case:
 ### How To Run?
 Please review the last Chapter *Dependencies* and install them all. If it ran successfully, you are ready to run.
 
-To make it, just run the file: [`main.py`](/server.py). It is configured.
+To make it, just run the file: [`server.py`](/server.py). It is configured.
 
 On the root directory [here]() of that project, just type:
 
