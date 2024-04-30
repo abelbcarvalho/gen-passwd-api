@@ -1,18 +1,16 @@
 from src.model.password import Password
 
 
-class PasswordChecker:
-    @classmethod
-    async def check_password(cls, password: Password) -> bool:
-        if password.length == 0:
-            return False
+async def check_password(password: Password) -> bool:
+    if password.length == 0:
+        return False
 
-        data_from_class: tuple = (
-            password.numbers,
-            password.low_case,
-            password.up_case,
-            password.special_char_1,
-            password.special_char_2
-        )
+    password_tuple: tuple = (
+        password.numbers,
+        password.low_case,
+        password.up_case,
+        password.special_char_1,
+        password.special_char_2
+    )
 
-        return True in data_from_class
+    return True in password_tuple

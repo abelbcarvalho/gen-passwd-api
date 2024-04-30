@@ -23,7 +23,7 @@ class TestGenerateSuccessful:
         new_password = await self.generate.generate_password(pass_one)
 
         assert new_password is not None
-        assert type(new_password) is str
+        assert isinstance(new_password, str)
         assert len(new_password) == pass_one.length
 
     @pytest.mark.asyncio
@@ -33,7 +33,7 @@ class TestGenerateSuccessful:
         new_password = await self.generate.generate_password(pass_two)
 
         assert new_password is not None
-        assert type(new_password) is str
+        assert isinstance(new_password, str)
         assert len(new_password) == pass_two.length
 
     @pytest.mark.asyncio
@@ -43,7 +43,7 @@ class TestGenerateSuccessful:
         new_password = await self.generate.generate_password(pass_three)
 
         assert new_password is not None
-        assert type(new_password) is str
+        assert isinstance(new_password, str)
         assert len(new_password) == pass_three.length
 
     @pytest.mark.asyncio
@@ -53,5 +53,5 @@ class TestGenerateSuccessful:
         new_password = await self.generate.generate_password(pass_four)
 
         assert new_password is not None
-        assert type(new_password) is str
+        assert isinstance(new_password, str)
         assert len(new_password) == pass_four.length

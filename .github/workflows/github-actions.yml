@@ -1,0 +1,35 @@
+name: GitHub Actions PyTest and PyLint
+run-name: ${{ github.actor }} is testing out PyLint and Unit Tests 🚀
+on: [push]
+permissions: read-all
+
+env:
+  API_URL_BASE_TEST: ${{ secrets.API_URL_BASE_TEST }}
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    environment: env
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Analysing the code with pylint
+        run: |
+          pylint --disable=C0111,R0903 $(git ls-files '*.py')
+      - name: Test with pytest
+        run: |
+          pip install pytest
+      - name: Run pytest
+        run: |
+          pytest

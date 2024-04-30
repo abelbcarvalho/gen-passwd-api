@@ -12,4 +12,6 @@ async def get_not_none_keys(password: Password) -> Generator[str, Any, None]:
         "special_char_2": password.special_char_2,
     }
 
-    return (v for v in not_none_keys.keys() if not_none_keys[v] is True)
+    keys_array = not_none_keys.keys()
+
+    return (v for v in keys_array if not_none_keys[v] is True)

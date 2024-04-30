@@ -19,7 +19,7 @@ class TestServiceSuccessLayer:
         new_password = await generate_password(password_one)
 
         assert new_password is not None
-        assert type(new_password) is str
+        assert isinstance(new_password, str)
         assert len(new_password) == password_one["length"]
 
     @pytest.mark.asyncio
@@ -27,7 +27,7 @@ class TestServiceSuccessLayer:
         new_password = await generate_password(password_two)
 
         assert new_password is not None
-        assert type(new_password) is str
+        assert isinstance(new_password, str)
         assert len(new_password) == password_two["length"]
 
     @pytest.mark.asyncio
@@ -35,7 +35,7 @@ class TestServiceSuccessLayer:
         new_password = await generate_password(password_three)
 
         assert new_password is not None
-        assert type(new_password) is str
+        assert isinstance(new_password, str)
         assert len(new_password) == password_three["length"]
 
     @pytest.mark.asyncio
@@ -43,5 +43,5 @@ class TestServiceSuccessLayer:
         new_password = await generate_password(password_four)
 
         assert new_password is not None
-        assert type(new_password) is str
+        assert isinstance(new_password, str)
         assert len(new_password) == password_four["length"]
