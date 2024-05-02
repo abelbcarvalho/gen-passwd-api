@@ -15,7 +15,6 @@ decorator==5.1.1
 dill==0.3.8
 exceptiongroup==1.2.1
 fastapi==0.110.2
-gen-passwd-api @ file:///home/abelcarvalho/Desktop/gen-passwd-api
 greenlet==3.0.3
 h11==0.14.0
 httpcore==1.0.5
